@@ -1,4 +1,6 @@
 import { LitElement, html, css } from 'lit';
+import "@lrnwebcomponents/meme-maker/meme-maker.js";
+import "@lrnwebcomponents/a11y-figure/a11y-figure.js";
 
 const logo = new URL('../assets/open-wc-logo.svg', import.meta.url).href;
 
@@ -60,7 +62,15 @@ class CardsApp extends LitElement {
       <main>
         <div class="logo"><img alt="open-wc logo" src=${logo} /></div>
         <h1>${this.header}</h1>
-
+  
+        <!-- Add the meme-maker component here -->
+        <meme-maker
+          alt="Cat stalking a small toy"
+          image-url="https://cdn2.thecatapi.com/images/9j5.jpg"
+          top-text="AAAAAAAA"
+          bottom-text="AAAAAAAAAAAAA"
+        ></meme-maker>
+  
         <p>Edit <code>src/CardsApp.js</code> and save to reload.</p>
         <a
           class="app-link"
@@ -71,7 +81,7 @@ class CardsApp extends LitElement {
           Code examples
         </a>
       </main>
-
+  
       <p class="app-footer">
         🚽 Made with love by
         <a
@@ -81,6 +91,11 @@ class CardsApp extends LitElement {
           >open-wc</a
         >.
       </p>
+      <a11y-figure img-src="//placekitten.com/400/300" img-alt="random kitten" open-text="Show Description" close-text="Hide Description" style="max-width:400px;">
+      <h4 slot="figcaption">AAAAAAAAAAAAAAA</h4>
+      <div slot="details">Awesome kitty</div>
+      <div slot="summary">Image Description</div>
+      </a11y-figure>
     `;
   }
 }
